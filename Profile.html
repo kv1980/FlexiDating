@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <title>FlexiDatingProfilePage</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script async src="js/flexi_dating.min.js"></script>
+        <script defer>
+        window.onload = function () {
+            console.log(scrumlib.getAllProfiles())
+        }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="kop">
+                <h1>Uw profiel</h1>
+            </div>
+            <div id ="formulier">
+                <form>
+                    <p>
+                        <label for ="familienaam">familienaam: </label>
+                        <input type ="text" id="familienaam" name="familienaam" class="fieldRequired" placeholder="uw familienaam" required></input>
+                    </p>
+                    <p>
+                        <label for = "voornaam">voornaam: </label>
+                        <input type ="text" id="voornaam" name="voornaam" class="fieldRequired" placeholder="uw voornaam" required></input>   
+                    </p>
+                    <p>
+                        <label for = "geboortedatum">geboortedatm: </label>
+                        <input type ="date" id="geboortedatum" name=geboortedatum class=datetextRequired" required></input>   
+                    </p>
+                    <p>
+                        <label for="email">email:</label>
+                        <input type="email" id="email" name="email" placeholder="uw emailadres" required></input>
+                    </p>
+                    <p>
+                        <label for ="nickname">nickname</label>
+                        <input type="text" id="nickname" name="nickname" class="textRequired" placeholder="uw nickname" required></input>
+                    </p>
+                    
+
+              
+            </div>
+        </div>
+
+    </body>
+</html>
