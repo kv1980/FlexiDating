@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script async src="js/flexi_dating.min.js"></script>
+        <script src ="Profile.js"></script>
         <script defer>
         window.onload = function () {
             console.log(scrumlib.getAllProfiles())
@@ -18,7 +19,7 @@
                 <h1>Uw profiel</h1>
             </div>
             <div id ="formulier">
-                <form>
+                <form id = "frm profile">
                     <p>
                         <label for ="familienaam">familienaam: </label>
                         <input type ="text" id="familienaam" name="familienaam" class="fieldRequired" placeholder="uw familienaam" required></input>
@@ -36,14 +37,56 @@
                         <input type="email" id="email" name="email" placeholder="uw emailadres" required></input>
                     </p>
                     <p>
-                        <label for ="nickname">nickname</label>
+                        <label for ="nickname">nickname:</label>
                         <input type="text" id="nickname" name="nickname" class="textRequired" placeholder="uw nickname" required></input>
                     </p>
                     <p>
-                        <label for ="nickname">nickname</label>
-                        <input type="text" id="nickname" name="nickname" class="textRequired" placeholder="uw nickname" required></input>
-                    </p>                   
-                    
+                        <label for ="beroep">beroep:</label>
+                        <input type="text" id="beroep" name="beroep" placeholder="uw beroep"></input>
+                    </p>    
+                    <p>
+                        <label for ="wachtwoord">wachtwoord:</label>
+                        <input type="text" id="wachtwoord" name="wachtwoord" placeholder="uw wachtwoord"></input>
+                    </p>  
+                    <p>
+                        <label for ="sexe">sexe:</label>
+                        <input type = "radio" id="sexe" name="sexe" value="male">Male
+                        <input type = "radio" id="sexe" name="sexe" value="female">Female<br>
+                    </p>
+                     <p>
+                        <label for ="seksvoorkeur">seksvoorkeur:</label>
+                        <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="male">Male
+                        <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="female">Female
+                        <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="Biseksueel">Biseksueel<br>
+                    </p>
+                    <p>
+                        <label for ="haarkleur">haarkleur:</label>
+                        <select name="haarkleur">
+                            
+                        </select>
+                    </p>
+                    <p>
+                        <label for ="oogkleur">oogkleur:</label>
+                        <select name="oogkleur">
+                            
+                        </select>
+                    </p>
+                    <p>
+                        <label for ="gewicht">gewicht:</label>
+                        <input type="number" id="gewicht" name="gewicht"> kg</input>
+                    </p>  
+                     <p>
+                        <label for ="grootte">grootte:</label>
+                        <input type="number" id="grootte" name="grootte"> cm</input>
+                    </p> 
+                      <p>
+                        <label for ="bewaren"></label>
+                        <input type="submit" id="bewaren" name="bewaren" value="bewaren">
+                        <label for ="wissen"></label>
+                        <input type="submit" id="wissen" name="wissen" value="wissen">
+                      
+                      
+                      </p> 
 
               
             </div>
