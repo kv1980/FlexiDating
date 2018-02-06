@@ -74,20 +74,44 @@
                         <input type="file" id="foto" accept="image/*">
                     </p>
                     <p>
-                        <input type="submit" id="bewaren" name="bewaren" value="Bewaren">
-                        <input type="reset" id="wissen" name="wissen" value="wissen">
-                    </p> 
+                        <input type="button" id="bewaren" name="bewaren" value="Bewaren">
+                        <input type="reset" id="wissen" name="wissen" value="Wissen">
+                    </p>
+                </form>
             </div>
         </div>
-        <script type="text/javascript">
-            window.onload = function () {
-                console.log(scrumlib.getAllProfiles());
-            };
-        </script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script async src="js/flexi_dating.min.js"></script>
+
         <script src ="js/kleurenHaren.json" type="text/javascript"></script>
         <script src ="js/kleurenOgen.json" type="text/javascript"></script>
-        <script src ="js/Profile.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                vulSelectIn("haarkleur",jsonKleurenHaren);
+                vulSelectIn("oogkleur",jsonKleurenOgen);
+                console.log(scrumlib.getAllProfiles());
+                var eSubmit = document.getElementById("bewaren");
+                eSubmit.addEventListener("click",function(){
+                    var oProfiel = {
+                        "familie" : document.getElementById("familienaam").value,
+                        "voornaam" : document.getElementById("voornaam").value
+                    };
+                    scrumlib.createProfile(oProfiel);
+                    console.log(scrumlib.getAllProfiles());
+                });
+            }; 
+            function vulSelectIn(selectID,jsonID){
+                var aKleuren = JSON.parse(jsonID);
+                var eSelectKleuren = document.getElementById(selectID);
+                for (var i = 0; i < aKleuren.length; i++) {
+                    var eOption = document.createElement('option');
+                    eOption.innerHTML = aKleuren[i];
+                    eOption.value = aKleuren[i];
+                    eSelectKleuren.appendChild(eOption);
+    };
+};
+        </script>
+
     </body>
 </html>
