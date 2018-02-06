@@ -1,1 +1,1 @@
-[{"bruin"},{"bruin-groen"},{"groen"},{"groen-grijs"},{"grijs"},{"grijs-blauw"},{"blauw"}]
+var jsonKleurenOgen = '["bruin","bruin-groen","groen","groen-grijs","grijs","grijs-blauw","blauw"]'

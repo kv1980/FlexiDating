@@ -53,14 +53,12 @@
                     </p>
                     <p>
                         <label for ="haarkleur">haarkleur:</label>
-                        <select name="haarkleur">
-                            
+                        <select name="haarkleur" id="haarkleur">  
                         </select>
                     </p>
                     <p>
                         <label for ="oogkleur">oogkleur:</label>
-                        <select name="oogkleur">
-                            
+                        <select name="oogkleur" id="oogkleur">
                         </select>
                     </p>
                     <p>
@@ -71,29 +69,23 @@
                         <label for ="grootte">grootte:</label>
                         <input type="number" id="grootte" name="grootte"> cm
                     </p> 
-                      <p>
+                    <p>
                         <label for ="bewaren"></label>
                         <input type="submit" id="bewaren" name="bewaren" value="bewaren">
                         <label for ="wissen"></label>
                         <input type="submit" id="wissen" name="wissen" value="wissen">
-                      
-                      
-                      </p> 
-
-              
+                    </p> 
             </div>
         </div>
-        
-
-        <script src ="js/kleurenHaren.json" type="text/javascript"></script>
         <script type="text/javascript">
-        window.onload = function () {
-            console.log(scrumlib.getAllProfiles());
-            alert("Hello World");
-        };
+            window.onload = function () {
+                console.log(scrumlib.getAllProfiles());
+            };
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script async src="js/flexi_dating.min.js"></script>
+        <script src ="js/kleurenHaren.json" type="text/javascript"></script>
+        <script src ="js/kleurenOgen.json" type="text/javascript"></script>
         <script src ="js/Profile.js" type="text/javascript"></script>
     </body>
 </html>
