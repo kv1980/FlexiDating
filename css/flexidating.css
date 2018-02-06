@@ -97,7 +97,8 @@ article p{
 }
 
 #logo{
-	display: block;
+	display: inline-block;
+	margin: 0px 0px 0px 100px;
 }
 
 /* Links */
@@ -145,7 +146,7 @@ article p{
 }
 
 #zoekKnop{
-	display: block;
+	display: inline-block;
 }
 
 .ZoekResultaten{
