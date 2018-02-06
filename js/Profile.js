@@ -1,7 +1,10 @@
 window.onload = function(){
     vulSelectIn("haarkleur",jsonKleurenHaren);
     vulSelectIn("oogkleur",jsonKleurenOgen);
-    alert("Test");
+    var eFoto = document.getElementById("foto");
+    eFoto.addEventListener("change",function(){
+        alert("hallo");
+    });
 };
 
 function vulSelectIn(selectID,jsonID){
