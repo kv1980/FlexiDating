@@ -1,7 +1,7 @@
 /* JavaScript functions library */
 
 function setId(userId){
-	sId = userId.innerHTML;
+	sId = userId;
 	localStorage.setItem('userId',sId,100);
 	window.history.go(0);
 }

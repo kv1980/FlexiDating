@@ -27,6 +27,12 @@ tr, td{
 	box-sizing: border-box;
 }
 
+.Kol3{
+	width: 25%;
+	height: auto;
+	float:left;
+}
+
 .Kol4{
 	width: 33%;
 	height: auto;
@@ -41,6 +47,12 @@ tr, td{
 
 .Kol8{
 	width: 66%;
+	height: auto;
+	float:left;
+}
+
+.Kol12{
+	width: 100%;
 	height: auto;
 	float:left;
 }
@@ -90,6 +102,15 @@ tr, td{
 #logo{
 	display: inline-block;
 	margin: 0px 0px 0px 100px;
+}
+
+.DisplayAfbeeldingen { 
+	display: inline-block;
+        width: 100px;
+        height: auto;
+	margin-left: 50px;
+	margin-right: auto;
+	margin-top: 20px;
 }
 
 /* Links */
@@ -167,7 +188,30 @@ visibility: hidden;
 }
 
 .Display{
-	float: left;
+    float:left;
+    margin: 50px 50px;
+}
+
+.afspraakMaken{
+        
+        
+}
+
+#afspraakMaken{
+        margin: 0 400px;
+        color: red;
+}
+
+table.Verplicht>th{
+        height: 50px
+        width: 50px;
+        font-size: 20px;
+        font-weight: bolder;
+}
+
+table.NietVerplicht>th{
+        font-size: 16px;
+        font-weight: bold;
 }
 
 /* Footer */

@@ -1,37 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 950px; width: 1520px;">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link href="css/flexidating.css" rel="stylesheet">
+        <link href="css/flexidating.css" rel="stylesheet">
         <title>FlexiDating - View Profile</title>
     </head>
     <body>
         <section class="Header">
-            <div class="row">
-                <div class="col-md-8"><img src="img/Flexi.png" class="banner" alt="Flexi logo"></div>
-                <div class="col-md-4">
+            <div class="Rij">
+                <div class="Kol8">
+                    <img src="img/Flexi.png" class="banner" alt="Flexi logo">
+                </div>
+                <div class="Kol4">
                     <button id="terugkeren" class="btn btn-lg btn-default">Terugkeren</button>
                 </div>
             </div>
         </section>
-        <section>
-			<div class="ZoekResultaten">
-				<div class="row marge">
-					<div class="col-md-4">
-					<img src="img/groenerei.jpg" class="img-responsive">
-			</div>
-		</section>
+        <section class="ZoekResultatenDisplay">
+            <div class="Rij">
+                <div class="Kol4">
+                    <img src="img/NoPicture.png" class="banner" alt="Flexi logo" style="width: 200px; height: auto; margin: 80px auto;">
+                </div>
+                <div class="Kol4">
+                    <table class="Verplicht" style="width: 100px; height: auto; margin: 150px auto;">
+                            <tr><th>Nickname:</td><td>Didier</td></tr>
+                            <tr><th>Leeftijd:</td><td>16</td></tr>
+                            <tr><th>Geslacht:</td><td>m</td></tr>
+                        </table>
+                </div>
+                <div class="Kol4">
+                    <img src="img/NoPicture.png" class="banner" alt="Flexi logo" style="width: 200px; height: auto; margin: 80px auto;">
+                </div>
+            </div>
+            <div class="Rij">
+                <div class="Kol6">
+                    <table class="NietVerplicht" style="width: 100px; height: auto; margin: 80px auto;">
+                            <tr><th>Beroep:</th><td>Didier</td></tr>
+                            <tr><th>Oogkleur:</th><td>Didier</td></tr>
+                            <tr><th>Haarkleur:</th><td>Didier</td></tr>
+                    </table>
+                </div>
+                <div class="Kol6">
+                    <table class="NietVerplicht" style="width: 100px; height: auto; margin: 80px auto;">
+                            <tr><th>Lengte:</th><td>Didier</td></tr>
+                            <tr><th>Gewicht:</th><td>Didier</td></tr>
+                            <tr><th>Seksvoorkeur:</th><td>Didier</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="Rij AfspraakMaken">
+                <div class="Kol12">
+                    <button id="afspraakMaken" style="width: 600px; height: auto; margin: 80px auto;">Afspraak maken</button>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
 
-
-
-<div class="container">
-        <div class="row marge">
-          <div class="col-md-4">
-              <img src="img/groenerei.jpg" class="img-responsive">
-              <h3 class="blok bordergroen">Groenerei</h3>
-              <p id="groenerei" class="blok">De handige compacte omvang van Brugge maakt dat je zalig hand in hand kunt verdwalen en slenteren langs de vele lieflijke reitjes. <a href="#" class="tekstgroen">lees meer..</a></p>
-              <a href="#"><button class="btn btn-block tekstwit achtgrgroen">ik ga naar Groenerei</button></a>
