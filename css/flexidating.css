@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document voor FlexiDating */
+
+/* NORMALIZE */
+html, body, div, section, article, aside, nav{
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	list-style-type: none;
+}
+
+/*
+img{
+	margin: 0 1.25em 0.5em 0;
+	border: none;
+	float: left;
+}
+*/
+
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: hide;
+}
+
+tr, td{
+	margin: 0;
+	padding: 0;
+}
+
+/* CLEARFIX */
+.clearFix:before, .clearFix:after{
+	content: " ";
+	display: table;
+}
+
+.clearFix:after{
+	clear: both;
+}
+
+.clearfix{
+	*zoom: 1;												/* enkel voor IE 6 en 7 */
+}
+
+/* STRUCTUUR & LAY-OUT */
+/* deze oefening gaat door een aantal stadia: 1. FIXED LAY-OUT: 980px container, basis 5 kol */
+.wikkel{
+	width: 980px;
+	margin: 0 auto;
+}
+
+/* TUSSENRUIMTE TOEPASSEN: Structuur */
+header{
+	padding-top: 0.375em;									/* 6px */
+}
+
+section, aside{
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+}
+
+article{
+	margin: 0 20px 0 0;										/* gutter */
+	padding: 0.375em 0 1.25em;								/* 12px */
+}
+
+article h2{
+	margin: 0.375em 0;										/* 6px */
+}
+
+article p{
+	margin: 0;
+	padding: 0 0 0.75em 0;									/* 12px */
+}
+
+/* Images */
+#background_home{
+	max-Width: 100%;
+	max-Height: 100%;
+	object-fit: contain;
+}
+
+.FooterImage{
+	display: block;
+    width: 100px;
+    height: auto;
+}
+
+.banner{
+	display: block;
+    width: auto;
+    height: 77px;
+    margin: 0px 10px;
+    padding: 0;
+}
+
+#logo{
+	display: inline-block;
+	margin: 0px 0px 0px 100px;
+}
+
+/* Links */
+.HeaderLinks{
+	display: inline-block;
+	width: 150px;
+	margin-top: 2px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #499bab;
+	text-decoration: none;
+}
+
+/* Header */
+.Header{
+	height: 80px;
+}
+
+.HeaderNickName{
+	width: 100px;
+	margin-top: 10px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+/* Body */
+.ZoekItem{
+	margin: 20px 0px;
+}
+
+.ZoekLabel{
+	width: 100px;
+}
+
+.GetallenBox{
+	width: 40px;
+}
+
+.ZoekRadio{
+	margin-top: 20px;
+}
+
+.ZoekParameters{
+	background:#b3d9ff;
+}
+
+#zoekKnop{
+	display: inline-block;
+}
+
+.ZoekResultaten{
+	height: 500px;
+	background:#eee;
+}
+
+/* Footer */
+.Footer{
+	display: block;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#footer_left{ 
+	display: inline-block;
+    width: 100px;
+    height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+	
+#footer_center{ 
+	display: inline-block;
+	vertical-align: top;
+	margin: 60px 100px;
+}
+
+#footer_right{ 
+	display: inline-block;
+    width: 100px;
+    height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#footer_add{ 
+	display: inline-block;
+    width: 600px;
+    height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+

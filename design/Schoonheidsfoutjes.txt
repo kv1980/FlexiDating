@@ -1,0 +1,2 @@
+1- Footer iets uit center
+2- Sectie ZoekParameters iets breder dan de anderen
