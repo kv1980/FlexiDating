@@ -75,7 +75,7 @@
                 </p> 
                 <p>
                     <label for="foto">foto: </label>
-                    <input type="file" id="foto" accept="image/*">
+                    <input type="text" id="foto" name="foto" placeholder="fotonaam zonder extensie">
                 </p>
                 <p>
                     <input type="button" id="bewaren" name="bewaren" value="Bewaren">
@@ -114,12 +114,6 @@
                         "grootte" : document.getElementById("grootte").value,
                         "foto" : document.getElementById("foto").value
                         }; 
-                        var foto = document.getElementById("foto").files[0];
-
-
-                        
-                        
-                        
                         scrumlib.createProfile(oProfiel);
                         scrumlib.save();
                     }
