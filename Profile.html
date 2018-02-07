@@ -2,43 +2,55 @@
 
 <html>
     <head>
-         <title>FlexiDatingProfilePage</title>
-        <meta charset="UTF-8">
-
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/Profile.css" rel="stylesheet">
+        <title>FlexiDating</title>
     </head>
     <body>
-        <div id="container">
-            <div id="kop">
-                <h1>Uw profiel</h1>
+        <div class="header">
+            <div class="headerLinks">
+                <img src="img/Flexi.png" class="banner" alt="Flexi logo">
             </div>
-            <div id ="registratie">
-                <p>
-                    * = verplicht veld
-                </p>
+            <div class="headerRechts">
+                <p class="headerNickName">Welkom</p>
+            </div>
+        </div>
+        <div class="titel">
+            <h2>Uw profiel</h2>
+            <p>Geen lange inschrijving bij FlexiDating: vul hieronder uw profiel in en uw veroveringstoch kan beginnen!</p>
+            <em>
+                * = verplicht veld
+            </em>
+        </div>
+        <form>
+            <div class="linkerkolom">
                 <p>
                     <label for ="familienaam">familienaam*: </label>
-                    <input type ="text" id="familienaam" name="familienaam" class="fieldRequired" placeholder="uw familienaam">
+                    <input type ="text" id="familienaam" name="familienaam" class="fieldRequired" required placeholder="uw familienaam">
                 </p>
                 <p>
                     <label for = "voornaam">voornaam*: </label>
-                    <input type ="text" id="voornaam" name="voornaam" class="fieldRequired" placeholder="uw voornaam">  
+                    <input type ="text" id="voornaam" name="voornaam" class="fieldRequired" required placeholder="uw voornaam">  
                 </p>
                 <p>
                     <label for = "geboortedatum">geboortedatum*: </label>
-                    <input type ="date" id="geboortedatum" name=geboortedatum class="fieldRequired">  
+                    <input type ="date" id="geboortedatum" name=geboortedatum class="fieldRequired" required >  
                 </p>
                 <p>
                     <label for="email">email*:</label>
-                    <input type="email" id="email" name="email" placeholder="uw emailadres" class="fieldRequired">
+                    <input type="email" id="email" name="email" placeholder="uw emailadres" class="fieldRequired" required >
                 </p>
                 <p>
                     <label for ="wachtwoord">wachtwoord*:</label>
-                    <input type="text" id="wachtwoord" name="wachtwoord" class="fieldRequired" placeholder="uw wachtwoord">
+                    <input type="text" id="wachtwoord" name="wachtwoord" class="fieldRequired" placeholder="uw wachtwoord" required >
                 </p> 
                 <p>
                     <label for ="nickname">nickname*:</label>
-                    <input type="text" id="nickname" name="nickname" class="fieldRequired" placeholder="uw nickname">
+                    <input type="text" id="nickname" name="nickname" class="fieldRequired" placeholder="uw nickname" required >
                 </p>
+            </div>
+            <div class="rechterkolom">
                 <p>
                     <label for ="beroep">beroep:</label>
                     <input type="text" id="beroep" name="beroep" placeholder="uw beroep">
@@ -75,15 +87,17 @@
                 </p> 
                 <p>
                     <label for="foto">foto: </label>
-                    <input type="text" id="foto" name="foto" placeholder="fotonaam zonder extensie">
-                </p>
-                <p>
-                    <input type="button" id="bewaren" name="bewaren" value="Bewaren">
-                    <input type="reset" id="wissen" name="wissen" value="Wissen">
+                    <input type="text" id="foto" name="foto" placeholder="fotonaam">
                 </p>
             </div>
-        </div>
-
+            <div class="knoppen">
+                <input type="button" id="bewaren" name="bewaren" value="Bewaar dit wondermooi profiel">
+                <input type="reset" id="wissen" name="wissen" value="Oeps foutje">
+            </div>
+        </form>  
+        <footer>
+            <a target="_blank" href="http://www.bol.com"><img src="img/bol.jpg" alt="advertentie"></a>
+        </footer>   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script async src="js/flexi_dating.min.js"></script>
 
@@ -96,9 +110,9 @@
                 console.log(scrumlib.getAllProfiles());
                 var eSubmit = document.getElementById("bewaren");
                 eSubmit.addEventListener("click",function(){
-                    var foutmelding = maakFoutMelding();
-;                   if (foutmelding==""){
-                       var oProfiel = {
+                var foutmelding = maakFoutMelding();
+                if (foutmelding==""){
+                    var oProfiel = {
                         "familienaam" : document.getElementById("familienaam").value,
                         "voornaam" : document.getElementById("voornaam").value,
                         "geboortedatum" : document.getElementById("geboortedatum").value,
@@ -113,17 +127,17 @@
                         "gewicht" : document.getElementById("gewicht").value,
                         "grootte" : document.getElementById("grootte").value,
                         "foto" : document.getElementById("foto").value
-                        }; 
-                        scrumlib.createProfile(oProfiel);
-                        scrumlib.save();
-                    }
-                    else {
-                        alert(foutmelding);
-                    }
-                    console.log(scrumlib.getAllProfiles());
+                    }; 
+                    scrumlib.createProfile(oProfiel);
+                    scrumlib.save();
+                }
+                else {
+                    alert(foutmelding);
+                }
+                console.log(scrumlib.getAllProfiles());
                 });
             }; 
-            
+
             function vulSelectIn(selectID,jsonID){
                 var aKleuren = JSON.parse(jsonID);
                 var eSelectKleuren = document.getElementById(selectID);
@@ -134,7 +148,7 @@
                     eSelectKleuren.appendChild(eOption);
                 };
             };
-            
+
             function radioButton(el){
                 var eSexe = document.getElementsByName(el);
                 var sSexe = undefined;
@@ -145,7 +159,7 @@
                 };
                 return sSexe;
             }; 
-            
+
             function maakFoutMelding() {
                 var foutmelding = "";
                 var eInputs = document.getElementsByClassName("fieldRequired");
@@ -161,8 +175,8 @@
                     foutmelding = "U moet ouder zijn dan 18 jaar.";
                 }
                 return foutmelding;
-            }
-            
+            };
+
             function berekenLeeftijd(sGeboortedatum){
                 var aGeboortedatum = sGeboortedatum.split("-");
                 var dGeboortedatum = new Date(aGeboortedatum[0],aGeboortedatum[1]-1,aGeboortedatum[2]);
@@ -172,6 +186,5 @@
                 return leeftijd;
             }
         </script>
-
     </body>
 </html>

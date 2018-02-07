@@ -3,96 +3,96 @@
 
 /* NORMALIZE */
 html, body, div, section, article, aside, nav{
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 ul{
-	list-style-type: none;
+    list-style-type: none;
 }
 
 table{
-	border-collapse: collapse;
-	border-spacing: 0;
-	empty-cells: hide;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: hide;
 }
 
 tr, td{
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .Rij{
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .Kol3{
-	width: 25%;
-	height: auto;
-	float:left;
+    width: 25%;
+    height: auto;
+    float:left;
 }
 
 .Kol4{
-	width: 33%;
-	height: auto;
-	float:left;
+    width: 33%;
+    height: auto;
+    float:left;
 }
 
 .Kol6{
-	width: 50%;
-	height: auto;
-	float:left;
+    width: 50%;
+    height: auto;
+    float:left;
 }
 
 .Kol8{
-	width: 66%;
-	height: auto;
-	float:left;
+    width: 66%;
+    height: auto;
+    float:left;
 }
 
 .Kol12{
-	width: 100%;
-	height: auto;
-	float:left;
+    width: 100%;
+    height: auto;
+    float:left;
 }
 
 /* CLEARFIX */
 .clearFix:before, .clearFix:after{
-	content: " ";
-	display: table;
+    content: " ";
+    display: table;
 }
 
 .clearFix:after{
-	clear: both;
+    clear: both;
 }
 
 .clearfix{
-	*zoom: 1;												/* enkel voor IE 6 en 7 */
+    *zoom: 1;												/* enkel voor IE 6 en 7 */
 }
 
 /* STRUCTUUR & LAY-OUT */
 .wikkel{
-	width: 980px;
-	margin: 0 auto;
+    width: 980px;
+    margin: 0 auto;
 }
 
 /* Images */
 #background_home{
-	background-image: url(../img/BackgroundA.jpg);
-	background-size: 100% 100%;
-	Width: 1520px;
-	Height: 950px;
+    background-image: url(../img/BackgroundA.jpg);
+    background-size: 100% 100%;
+    width: 1520px;
+    height: 950px;
 }
 
 .FooterImage{
-	display: block;
+    display: block;
     width: 100px;
     height: auto;
 }
 
 .banner{
-	display: block;
+    display: block;
     width: auto;
     height: 77px;
     margin: 0px 10px;
@@ -100,91 +100,91 @@ tr, td{
 }
 
 #logo{
-	display: inline-block;
-	margin: 0px 0px 0px 100px;
+    display: inline-block;
+    margin: 0px 0px 0px 100px;
 }
 
 .DisplayAfbeeldingen { 
-	display: inline-block;
-        width: 100px;
-        height: auto;
-	margin-left: 50px;
-	margin-right: auto;
-	margin-top: 20px;
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 /* Links */
 .HeaderLinks{
-	display: inline-block;
-	width: 150px;
-	margin-top: 2px;
-	font-size: 16px;
-	font-weight: bold;
-	color: #499bab;
-	text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    margin-top: 2px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #499bab;
+    text-decoration: none;
 }
 
 /* Header */
 .Header{
-	height: 80px;
+    height: 80px;
 }
 
 .HeaderNickName{
-	width: 100px;
-	margin-top: 10px;
-	font-size: 24px;
-	font-weight: bold;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* Body */
 #loginBox{
-margin: 0; 
-margin-left: 40%; 
-margin-right: 40%;
-margin-top: 50px; 
-padding-top: 10px; 
-width: 20%; 
-height: 150px; 
-position: absolute; 
-background: #FBFBF0; 
-border: solid #000000 2px; 
-z-index: 9; 
-font-family: arial; 
-visibility: hidden; 
+    margin: 0; 
+    margin-left: 40%; 
+    margin-right: 40%;
+    margin-top: 50px; 
+    padding-top: 10px; 
+    width: 20%; 
+    height: 150px; 
+    position: absolute; 
+    background: #FBFBF0; 
+    border: solid #000000 2px; 
+    z-index: 9; 
+    font-family: arial; 
+    visibility: hidden; 
 }
 
 .ZoekItem{
-	margin: 20px 0px;
+    margin: 20px 0px;
 }
 
 .ZoekLabel{
-	width: 100px;
+    width: 100px;
 }
 
 .GetallenBox{
-	width: 40px;
+    width: 40px;
 }
 
 .ZoekRadio{
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .ZoekParameters{
-	background:#b3d9ff;
+    background:#b3d9ff;
 }
 
 #zoekKnop{
-	display: inline-block;
+    display: inline-block;
 }
 
 .ZoekResultaten{
-	height: 500px;
-	background:#eee;
+    height: 500px;
+    background:#eee;
 }
 
 .ZoekResultatenDisplay{
-	height: 800px;
-	background:#eee;
+    height: 800px;
+    background:#eee;
 }
 
 .Display{
@@ -193,65 +193,65 @@ visibility: hidden;
 }
 
 .afspraakMaken{
-        
-        
+
+
 }
 
 #afspraakMaken{
-        margin: 0 400px;
-        color: red;
+    margin: 0 400px;
+    color: red;
 }
 
 table.Verplicht>th{
-        height: 50px
-        width: 50px;
-        font-size: 20px;
-        font-weight: bolder;
+    height: 50px;
+    width : 50px;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 table.NietVerplicht>th{
-        font-size: 16px;
-        font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* Footer */
 .Footer{
-	display: block;
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #footer_left{ 
-	display: inline-block;
+    display: inline-block;
     width: 100px;
     height: auto;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
-	
+
 #footer_center{ 
-	display: inline-block;
-	vertical-align: top;
-	margin: 60px 100px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 60px 100px;
 }
 
 #footer_right{ 
-	display: inline-block;
+    display: inline-block;
     width: 100px;
     height: auto;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 #footer_add{ 
-	display: inline-block;
+    display: inline-block;
     width: 600px;
     height: auto;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 

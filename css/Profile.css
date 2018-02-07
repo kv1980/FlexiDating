@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document voor FlexiDating */
+
+/* NORMALIZE */
+html, body, div, section, article, aside, nav{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    /*border : solid;*/
+}
+
+/* header */ 
+.header{
+    height: 80px;
+    width: 1920px;
+    padding: 0px 10px;
+}
+.headerLinks{
+    height: 80px;
+    width: 984px;
+    float: left;
+}
+.headerLinks img {
+    height: 77px;
+}
+.headerRechts{
+    height: 80px;
+    width: 644px;
+    float: right;
+}
+
+.headerNickName{
+    width: 100px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* titel */
+
+.titel {
+    width : 1920px;
+    background: #b3d9ff;
+    padding : 10px 0px;
+    text-align : center;
+}
+
+/* form */
+form {
+    width : 1920px;
+    height : 400px;
+    background : #eee;
+}
+
+.linkerkolom {
+    width: 500px;
+    height: 300px;
+    float : left;
+    margin-left : 490px;
+    padding : 20px;
+}
+
+.rechterkolom {
+    width: 500px;
+    height: 300px;
+    float: right;
+    margin-right : 290px;
+    padding : 20px;
+}
+
+.knoppen {
+    width: 1920px;
+    height: 10px;
+    text-align : center;
+}
+
+/* footer */
+footer {
+    margin : 20px;
+    text-align : center;
+}
+footer img {
+    height : 150px;
+}
