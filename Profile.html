@@ -11,73 +11,76 @@
             <div id="kop">
                 <h1>Uw profiel</h1>
             </div>
-            <div id ="formulier">
-                <form id = "frmProfile">
-                    <p>
-                        <label for ="familienaam">familienaam: </label>
-                        <input type ="text" id="familienaam" name="familienaam" class="fieldRequired" placeholder="uw familienaam" required>
-                    </p>
-                    <p>
-                        <label for = "voornaam">voornaam: </label>
-                        <input type ="text" id="voornaam" name="voornaam" class="fieldRequired" placeholder="uw voornaam" required>  
-                    </p>
-                    <p>
-                        <label for = "geboortedatum">geboortedatm: </label>
-                        <input type ="date" id="geboortedatum" name=geboortedatum class="fieldRequired" required>  
-                    </p>
-                    <p>
-                        <label for="email">email:</label>
-                        <input type="email" id="email" name="email" placeholder="uw emailadres" required>
-                    </p>
-                    <p>
-                        <label for ="nickname">nickname:</label>
-                        <input type="text" id="nickname" name="nickname" class="fieldRequired" placeholder="uw nickname" required>
-                    </p>
-                    <p>
-                        <label for ="beroep">beroep:</label>
-                        <input type="text" id="beroep" name="beroep" placeholder="uw beroep">
-                    </p>    
-                    <p>
-                        <label for ="wachtwoord">wachtwoord:</label>
-                        <input type="text" id="wachtwoord" name="wachtwoord" placeholder="uw wachtwoord">
-                    </p>  
-                    <p>
-                        <label for ="sexe">sexe:</label>
-                        <input type = "radio" id="sexem" name="sexe" value="man">Man
-                        <input type = "radio" id="sexev" name="sexe" value="vrouw">Vrouw
-                    </p>
-                     <p>
-                         seksvoorkeur:<br>
-                        <input type = "checkbox" name="seksvoorkeur" value="man">Man<br>
-                        <input type = "checkbox" name="seksvoorkeur" value="vrouw">Vrouw<br>
-                    </p>
-                    <p>
-                        <label for ="haarkleur">haarkleur:</label>
-                        <select name="haarkleur" id="haarkleur">  
-                        </select>
-                    </p>
-                    <p>
-                        <label for ="oogkleur">oogkleur:</label>
-                        <select name="oogkleur" id="oogkleur">
-                        </select>
-                    </p>
-                    <p>
-                        <label for ="gewicht">gewicht:</label>
-                        <input type="number" id="gewicht" name="gewicht"> kg
-                    </p>  
-                     <p>
-                        <label for ="grootte">grootte:</label>
-                        <input type="number" id="grootte" name="grootte"> cm
-                    </p> 
-                    <p>
-                        <label for="foto">foto: </label>
-                        <input type="file" id="foto" accept="image/*">
-                    </p>
-                    <p>
-                        <input type="button" id="bewaren" name="bewaren" value="Bewaren">
-                        <input type="reset" id="wissen" name="wissen" value="Wissen">
-                    </p>
-                </form>
+            <div id ="registratie">
+                <p>
+                    * = verplicht veld
+                </p>
+                <p>
+                    <label for ="familienaam">familienaam*: </label>
+                    <input type ="text" id="familienaam" name="familienaam" class="fieldRequired" placeholder="uw familienaam">
+                </p>
+                <p>
+                    <label for = "voornaam">voornaam*: </label>
+                    <input type ="text" id="voornaam" name="voornaam" class="fieldRequired" placeholder="uw voornaam">  
+                </p>
+                <p>
+                    <label for = "geboortedatum">geboortedatum*: </label>
+                    <input type ="date" id="geboortedatum" name=geboortedatum class="fieldRequired">  
+                </p>
+                <p>
+                    <label for="email">email*:</label>
+                    <input type="email" id="email" name="email" placeholder="uw emailadres" class="fieldRequired">
+                </p>
+                <p>
+                    <label for ="wachtwoord">wachtwoord*:</label>
+                    <input type="text" id="wachtwoord" name="wachtwoord" class="fieldRequired" placeholder="uw wachtwoord">
+                </p> 
+                <p>
+                    <label for ="nickname">nickname*:</label>
+                    <input type="text" id="nickname" name="nickname" class="fieldRequired" placeholder="uw nickname">
+                </p>
+                <p>
+                    <label for ="beroep">beroep:</label>
+                    <input type="text" id="beroep" name="beroep" placeholder="uw beroep">
+                </p>    
+
+                <p>
+                    <label for ="sexe">sexe:</label>
+                    <input type = "radio" id="sexem" name="sexe" value="m">Man
+                    <input type = "radio" id="sexev" name="sexe" value="v">Vrouw
+                </p>
+                <p>
+                    <label for ="seksvoorkeur">seksvoorkeur:</label>
+                    <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="homo">Homo
+                    <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="hetero">Hetero
+                    <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="bi">Bi
+                </p>
+                <p>
+                    <label for ="haarkleur">haarkleur:</label>
+                    <select name="haarkleur" id="haarkleur">  
+                    </select>
+                </p>
+                <p>
+                    <label for ="oogkleur">oogkleur:</label>
+                    <select name="oogkleur" id="oogkleur">
+                    </select>
+                </p>
+                <p>
+                    <label for ="gewicht">gewicht:</label>
+                    <input type="number" id="gewicht" name="gewicht"> kg
+                </p>  
+                <p>
+                    <label for ="grootte">grootte:</label>
+                    <input type="number" id="grootte" name="grootte"> cm
+                </p> 
+                <p>
+                    <label for="foto">foto: </label>
+                    <input type="text" id="foto" name="foto" placeholder="fotonaam zonder extensie">
+                </p>
+                <p>
+                    <input type="button" id="bewaren" name="bewaren" value="Bewaren">
+                    <input type="reset" id="wissen" name="wissen" value="Wissen">
+                </p>
             </div>
         </div>
 
@@ -93,14 +96,34 @@
                 console.log(scrumlib.getAllProfiles());
                 var eSubmit = document.getElementById("bewaren");
                 eSubmit.addEventListener("click",function(){
-                    var oProfiel = {
-                        "familie" : document.getElementById("familienaam").value,
-                        "voornaam" : document.getElementById("voornaam").value
-                    };
-                    scrumlib.createProfile(oProfiel);
+                    var foutmelding = maakFoutMelding();
+;                   if (foutmelding==""){
+                       var oProfiel = {
+                        "familienaam" : document.getElementById("familienaam").value,
+                        "voornaam" : document.getElementById("voornaam").value,
+                        "geboortedatum" : document.getElementById("geboortedatum").value,
+                        "email" : document.getElementById("email").value,
+                        "nickname" : document.getElementById("nickname").value,
+                        "beroep" : document.getElementById("beroep").value,
+                        "wachtwoord" : document.getElementById("wachtwoord").value,
+                        "sexe" : radioButton("sexe"),
+                        "seksvoorkeur" : radioButton("seksvoorkeur"),
+                        "haarkleur" : document.getElementById("haarkleur").value,
+                        "oogkleur" : document.getElementById("oogkleur").value,
+                        "gewicht" : document.getElementById("gewicht").value,
+                        "grootte" : document.getElementById("grootte").value,
+                        "foto" : document.getElementById("foto").value
+                        }; 
+                        scrumlib.createProfile(oProfiel);
+                        scrumlib.save();
+                    }
+                    else {
+                        alert(foutmelding);
+                    }
                     console.log(scrumlib.getAllProfiles());
                 });
             }; 
+            
             function vulSelectIn(selectID,jsonID){
                 var aKleuren = JSON.parse(jsonID);
                 var eSelectKleuren = document.getElementById(selectID);
@@ -109,8 +132,45 @@
                     eOption.innerHTML = aKleuren[i];
                     eOption.value = aKleuren[i];
                     eSelectKleuren.appendChild(eOption);
-    };
-};
+                };
+            };
+            
+            function radioButton(el){
+                var eSexe = document.getElementsByName(el);
+                var sSexe = undefined;
+                for (var i =0;i<eSexe.length;i++) {
+                    if (eSexe[i].checked) {
+                        sSexe = eSexe[i].value;
+                    };
+                };
+                return sSexe;
+            }; 
+            
+            function maakFoutMelding() {
+                var foutmelding = "";
+                var eInputs = document.getElementsByClassName("fieldRequired");
+                for (var i = 0; i<eInputs.length; i++){
+                    console.log(i);
+                    if (eInputs[i].value == ""){
+                        foutmelding = "Niet alle verplichte velden werden ingevuld.";
+                    }
+                };
+                var sGeboortedatum = document.getElementById("geboortedatum").value;
+                console.log(berekenLeeftijd(sGeboortedatum));
+                if (berekenLeeftijd(sGeboortedatum)<18){
+                    foutmelding = "U moet ouder zijn dan 18 jaar.";
+                }
+                return foutmelding;
+            }
+            
+            function berekenLeeftijd(sGeboortedatum){
+                var aGeboortedatum = sGeboortedatum.split("-");
+                var dGeboortedatum = new Date(aGeboortedatum[0],aGeboortedatum[1]-1,aGeboortedatum[2]);
+                var leeftijdMs = Date.now() - dGeboortedatum.getTime();
+                var leeftijdDate = new Date(leeftijdMs);
+                var leeftijd = Math.abs(leeftijdDate.getUTCFullYear()-1970);
+                return leeftijd;
+            }
         </script>
 
     </body>
