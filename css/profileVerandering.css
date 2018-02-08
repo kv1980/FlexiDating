@@ -34,11 +34,11 @@
 .knoppen {
     background-color: #77c4d6;
     text-align: center; 
-    height: 40px;
+    height: 35px;
     padding-top: 10px;
 }
 .knoppen input {
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .Footer{

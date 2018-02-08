@@ -30,7 +30,7 @@
         </div>
         <form class="Profiel">
             <div class="Rij">
-                <div class="Kol6" style="margin-left:355px">
+                <div class="Kol6" style="margin-left:360px">
                     <table>
                         <tr>
                             <th><label for="email">Email*:</label></th>
@@ -91,9 +91,9 @@
                         </tr>
                         <tr>
                             <th><label for ="seksvoorkeur">Geaardheid:</label></th>
-                            <td><input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="homo">Homo
-                                <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="hetero">Hetero
-                                <input type = "radio" id="seksvoorkeur" name="seksvoorkeur" value="bi">Bi</td>
+                            <td><input type = "radio" name="seksvoorkeur" value="homo">Homo
+                                <input type = "radio" name="seksvoorkeur" value="hetero">Hetero
+                                <input type = "radio" name="seksvoorkeur" value="bi">Bi</td>
                         </tr>
                     </table>
                 </div>
@@ -102,7 +102,6 @@
         <div class="Rij">
                 <div class="knoppen">
                     <input type="button" id="bewaren" name="bewaren" value="Gegevens Opslaan">
-                    <input type="reset" id="wissen" name="wissen" value="Reset">
                 </div>
         </div>
     </section>
@@ -117,10 +116,11 @@
             window.onload = function () {
                 vulSelectIn("haarkleur",jsonKleurenHaren);
                 vulSelectIn("oogkleur",jsonKleurenOgen);
-                console.log(scrumlib.getAllProfiles());
+                scrumlib.init();
+                var aProfielen = scrumlib.getAllProfiles();
                 var eSubmit = document.getElementById("bewaren");
                 eSubmit.addEventListener("click",function(){
-                var foutmelding = maakFoutMelding();
+                var foutmelding = maakFoutMelding(aProfielen);
                 if (foutmelding==""){
                     var oProfiel = {
                         "familienaam" : document.getElementById("familienaam").value,
@@ -171,19 +171,23 @@
                 return sSexe;
             }; 
 
-            function maakFoutMelding() {
+            function maakFoutMelding(aProfielen) {
                 var foutmelding = "";
                 var eInputs = document.getElementsByClassName("fieldRequired");
                 for (var i = 0; i<eInputs.length; i++){
-                    console.log(i);
                     if (eInputs[i].value == ""){
                         foutmelding = "Niet alle verplichte velden werden ingevuld.";
                     }
                 };
                 var sGeboortedatum = document.getElementById("geboortedatum").value;
-                console.log(berekenLeeftijd(sGeboortedatum));
-                if (berekenLeeftijd(sGeboortedatum)<18){
-                    foutmelding = "U moet ouder zijn dan 18 jaar.";
+                if (berekenLeeftijd(sGeboortedatum)<16){
+                    foutmelding = "U moet ouder zijn dan 16 jaar.";
+                }
+                var sEmail = document.getElementById("email").value;
+                for (var i = 0; i < aProfielen.length; i++){
+                    if (sEmail == aProfielen[i].email){
+                        foutmelding = "Er bestaat al een account met dit emailadres."; 
+                    }
                 }
                 return foutmelding;
             };
