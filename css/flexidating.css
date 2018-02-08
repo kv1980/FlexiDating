@@ -165,7 +165,6 @@ th{
 
 .Profiel{
     height : 400px;
-    background : #eee;
 }
 
 .ProfielGegevens{
@@ -181,7 +180,7 @@ th{
 }
 
 .GetallenBox{
-    width: 40px;
+    width: 60px;
 }
 
 .ZoekRadio{
