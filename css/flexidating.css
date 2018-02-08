@@ -134,8 +134,12 @@ th{
     margin-top: 2px;
     font-size: 16px;
     font-weight: bold;
-    color: #499bab;
+    color: #77c4d6;
     text-decoration: none;
+}
+.HeaderLinks:hover{
+    color: #0086ff;
+    text-decoration: underline;
 }
 
 /* Header */
