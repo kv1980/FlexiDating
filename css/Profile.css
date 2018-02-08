@@ -12,12 +12,13 @@ html, body, div, section, article, aside, nav{
 /* header */ 
 .header{
     height: 80px;
-    width: 1920px;
+    width: 1520px;
     padding: 0px 10px;
 }
 .headerLinks{
     height: 80px;
-    width: 984px;
+    width: 5
+        84px;
     float: left;
 }
 .headerLinks img {
@@ -39,7 +40,7 @@ html, body, div, section, article, aside, nav{
 /* titel */
 
 .titel {
-    width : 1920px;
+    width : 1510px;
     background: #b3d9ff;
     padding : 10px 0px;
     text-align : center;
@@ -47,29 +48,29 @@ html, body, div, section, article, aside, nav{
 
 /* form */
 form {
-    width : 1920px;
+    width : 1520px;
     height : 400px;
     background : #eee;
 }
 
 .linkerkolom {
-    width: 500px;
+    width: 350px;
     height: 300px;
     float : left;
-    margin-left : 490px;
+    margin-left : 400px;
     padding : 20px;
 }
 
 .rechterkolom {
-    width: 500px;
+    width: 350px;
     height: 300px;
     float: right;
-    margin-right : 290px;
+    margin-right : 310px;
     padding : 20px;
 }
 
 .knoppen {
-    width: 1920px;
+    width: 1520px;
     height: 10px;
     text-align : center;
 }
