@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="css/flexidating.css" rel="stylesheet">
+        <title>FlexiDating</title>
+    </head>
+    <body>
+        <section class="Header">
+            <div class="row">
+                <div class="col-md-8"><img src="img/Flexi.png" class="banner" alt="Flexi logo"></div>
+                <div class="col-md-4">
+                    <p class="HeaderNickName">Naam</p>
+                    <a class="HeaderLinks">Profiel Wijzigen</a>
+                    <a class="HeaderLinks" href="flexidating.html">Uitloggen</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="ZoekParameters row">
+                <div class="col-md-4">
+                    <ul>
+                        <li class="ZoekItem">
+                            <label class="ZoekLabel">Leeftijd</label>
+                            <label for="minleeftijd">Min</label>
+                            <input type="number" class="GetallenBox" id="minleeftijd">
+                            <label for="maxleeftijd">Max</label>
+                            <input type="number" class="GetallenBox" id="maxleeftijd">
+                        </li>
+                        <li class="ZoekItem">
+                            <label class="ZoekLabel" for="haarkleur">Haarkleur</label>
+                            <select name="haarkleur" id="haarkleur">
+
+                            </select>
+                        </li>
+                        <li class="ZoekItem">
+                            <label class="ZoekLabel" for="oogkleur">Oogkleur</label>
+                            <select name="oogkleur" id="oogkleur">
+
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li class="ZoekItem">
+                            <label class="ZoekLabel">Grootte</label>
+                            <label for="minGrootte">Min</label>
+                            <input type="number" class="GetallenBox" id="minGrootte">
+                            <label for="maxGrootte">Max</label>
+                            <input type="number" class="GetallenBox" id="maxGrootte">
+
+
+                        </li>
+                        <li class="ZoekItem">
+                        <li class="ZoekItem">
+                            <label class="ZoekLabel">Gewicht</label>
+                            <label for="minGewicht">Min</label>
+                            <input type="number" class="GetallenBox" id="minGewicht">
+                            <label for="maxGewicht">Max</label>
+                            <input type="number" class="GetallenBox" id="maxGewicht">
+
+                        </li>
+                        <li class="ZoekItem">
+                            <label class="ZoekLabel">Ik zoek</label>
+                            <label for="kiesMan">Man</label>
+                            <input type="radio" class="ZoekRadio" name="sexvoorkeur" id="kiesMan" value="man" />
+                            <label for="kiesVrouw">Vrouw</label>
+                            <input type="radio" class="ZoekRadio" name="sexvoorkeur" id="kiesVrouw" value="vrouw"/>
+                            <label for="kiesBeide">Beide</label>
+                            <input type="radio" class="ZoekRadio" name="sexvoorkeur" id="kiesBeide" value="beide" checked="checked"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li id="zoekKnop">
+                            <input type="button" value="Zoeken" id="zoekKnopje"/>
+                        </li>
+                        <li id="logo">
+                            <img src="img/logo.png" alt="Flexi logo">
+                        </li>
+                    </ul>
+                </div>
+        </section>
+        <section>
+            <div class="ZoekResultaten" id ="zoekMatrix">
+            </div>
+        </section>
+        <footer class="Footer">
+            <ul>
+                <li id="footer_add">
+                    <img src="img/BabyDeals.png" alt="figuurBabyDeals">
+                </li>
+            </ul>
+        </footer>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script async src="js/flexi_dating.min.js"></script>
+
+        <script src ="js/kleurenHaren.json" type="text/javascript"></script>
+        <script src ="js/kleurenOgen.json" type="text/javascript"></script>
+        <script type="text/javascript">
+            
+            
+        window.onload = function () {
+            vulSelectIn("haarkleur",jsonKleurenHaren);
+            vulSelectIn("oogkleur",jsonKleurenOgen);
+            scrumlib.init();
+            document.getElementById("zoekKnopje").addEventListener("click",function(){
+                var oSelectie = maakOSelectie();
+                var aSelectie = scrumlib.getProfilesByConditions(oSelectie);
+                toonProfielen(aSelectie);  
+            });
+        };  
+         
+    
+        function vulSelectIn(selectID,jsonID){
+            var aKleuren = JSON.parse(jsonID);
+            var eSelectKleuren = document.getElementById(selectID);
+            for (var i = 0; i < aKleuren.length; i++) {
+                var eOption = document.createElement('option');
+                eOption.innerHTML = aKleuren[i];
+                eOption.value = aKleuren[i];
+                eSelectKleuren.appendChild(eOption);
+            };
+        };
+            
+            function berekenLeeftijd(sGeboortedatum){
+                var aGeboortedatum = sGeboortedatum.split("-");
+                var dGeboortedatum = new Date(aGeboortedatum[0],aGeboortedatum[1]-1,aGeboortedatum[2]);
+                var leeftijdMs = Date.now() - dGeboortedatum.getTime();
+                var leeftijdDate = new Date(leeftijdMs);
+                var leeftijd = Math.abs(leeftijdDate.getUTCFullYear()-1970);
+                return leeftijd;
+            }
+            
+            function maakOSelectie(){ 
+                var oSelectie = {};
+                console.log(oSelectie);
+                if(document.getElementById("minleeftijd").value != ""){
+                    //oSelectie.leeftijd={"waarde":document.getElementById("minleeftijd").value, "match": ">"};
+                }
+                if(document.getElementById("maxleeftijd").value != ""){
+                    //oSelectie.leeftijd={"waarde":document.getElementById("maxleeftijd").value, "match": "<"};
+                }
+                if(document.getElementById("haarkleur").value != ""){
+                    oSelectie.haarkleur={"waarde":document.getElementById("haarkleur").value, "match": "~"};
+                }
+                if(document.getElementById("oogkleur").value != ""){
+                    oSelectie.oogkleur={"waarde":document.getElementById("oogkleur").value, "match": "~"};
+                }
+                if(document.getElementById("minGrootte").value != ""){
+                    oSelectie.grootte={"waarde":document.getElementById("minGrootte").value, "match": ">"};
+                }
+                if(document.getElementById("maxGrootte").value != ""){
+                    oSelectie.grootte={"waarde":document.getElementById("maxGrootte").value, "match": "<"};
+                }
+                if(document.getElementById("minGewicht").value != ""){
+                    oSelectie.gewicht={"waarde":document.getElementById("minGewicht").value, "match": ">"};
+                }
+                 if(document.getElementById("maxGewicht").value != ""){
+                    oSelectie.gewicht={"waarde":document.getElementById("maxGewicht").value, "match": "<"};
+                }
+                  if(document.getElementById("kiesMan").checked){
+                    oSelectie.sexe={"waarde":"m", "match": "="};
+                }
+                  if(document.getElementById("kiesVrouw").checked){
+                    oSelectie.sexe={"waarde":"v", "match": "="};
+                }
+                console.log(oSelectie);
+                return oSelectie;
+            }
+            
+            function toonProfielen(aSelectie){
+                var eDivResultaten = document.getElementById("zoekMatrix"); 
+                while (eDivResultaten.firstChild){
+                    eDivResultaten.removeChild(eDivResultaten.firstChild);
+                }
+                for(var i = 0; i<aSelectie.length; i++){
+                  eDivIndividu = document.createElement('div');
+                  eDivIndividu.setAttribute("id", aSelectie[i]._id);
+                  eDivIndividu.setAttribute("class", "IndivRes");
+                  eLijst = document.createElement('ul');
+                  eLijstItem1 = document.createElement('li');
+                  eLijstItem1.innerHTML = aSelectie[i].geboortedatum;
+                  eLijst.appendChild(eLijstItem1);
+                  eLijstItem2 = document.createElement('li');
+                  eLijstItem2.innerHTML = aSelectie[i].nickname;
+                  eLijst.appendChild(eLijstItem2);
+                  eLijstItem3 = document.createElement('li');
+                  eLijstItem3.innerHTML = aSelectie[i].sexe;
+                  eLijst.appendChild(eLijstItem3);
+                  eDivIndividu.appendChild(eLijst);
+                  eKnop = document.createElement("button");
+                  eKnop.innerHTML = 'toon';
+                  eKnop.addEventListener("click", function(){
+                      window.location.href = "http://localhost:8383/FlexiDating/display.html";
+                  })
+                  eDivIndividu.appendChild(eKnop);
+                  eDivResultaten.appendChild(eDivIndividu);
+              }   
+            }
+        </script>
+    </body>
+</html>
