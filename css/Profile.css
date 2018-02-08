@@ -61,12 +61,20 @@ form {
     padding : 20px;
 }
 
+.linkerkolom p {
+    height : 20px;
+}
+
 .rechterkolom {
     width: 350px;
     height: 300px;
     float: right;
     margin-right : 310px;
     padding : 20px;
+}
+
+.rechterkolom p {
+    height : 20px;
 }
 
 .knoppen {
