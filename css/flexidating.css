@@ -89,6 +89,12 @@ th{
     height: 950px;
 }
 
+.DisplayImage{
+    display: block;
+    width: 200px;
+    height: auto;
+}
+
 .FooterImage{
     display: block;
     width: 100px;

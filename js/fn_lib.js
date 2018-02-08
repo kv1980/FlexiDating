@@ -3,15 +3,21 @@
 function setId(userId){
 	sId = userId;
 	localStorage.setItem('userId',sId,100);
-	window.history.go(0);
+}
+
+function setPartnerId(userId){
+	sId = userId;
+	localStorage.setItem('partnerId',sId,100);
 }
 
 function removeId(){
 	localStorage.setItem('userId',"undefined",100);
-	window.history.go(0);
+}
+
+function removePartnerId(){
+	localStorage.setItem('partnerId',"undefined",100);
 }
 
 function removeCookie(){
 	localStorage.clear();
-	window.history.go(0);
 }

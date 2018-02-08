@@ -6,18 +6,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="css/flexidating.css" rel="stylesheet">
         <title>FlexiDating - View Profile</title>
-        <script type="text/javascript">
-                    window.onload = function(){
-                        var knopTerugkeren = document.getElementById("terugkeren");
-                        knopTerugkeren.addEventListener('click',function(){
-                            location.href = "core.html";
-                        })
-                        var knopAfspraak = document.getElementById("afspraakMaken");
-                        knopAfspraak.addEventListener('click', function(){
-                            alert('U heeft een afspraakje gemaakt met de lieftallige');
-                        })
-                    }
-        </script>
     </head>
     <body>
         <section class="Header">
@@ -33,32 +21,32 @@
         <section class="ZoekResultatenDisplay">
             <div class="Rij">
                 <div class="Kol4">
-                    <img src="img/NoPicture.png" class="banner" alt="Flexi logo" style="width: 200px; height: auto; margin: 80px auto;">
+                    <img id="displayFoto" src="img/NoPicture.png" class="DisplayImage" alt="Foto" style="margin: 60px auto;">
                 </div>
                 <div class="Kol4">
                     <table class="Verplicht">
-                            <tr><th>Nickname:</th><td>Didier</td></tr>
-                            <tr><th>Leeftijd:</th><td>16</td></tr>
-                            <tr><th>Geslacht:</th><td>m</td></tr>
+                            <tr><th>Nickname:</th><td id="displayNickname"></td></tr>
+                            <tr><th>Leeftijd:</th><td id="displayLeeftijd"></td></tr>
+                            <tr><th>Geslacht:</th><td id="displayGeslacht"></td></tr>
                         </table>
                 </div>
                 <div class="Kol4">
-                    <img src="img/NoPicture.png" class="banner" alt="Flexi logo" style="width: 200px; height: auto; margin: 80px auto;">
+                    <img src="img/NoPicture.png" class="DisplayImage" alt="Sterrenbeeld" style="margin: 60px auto;">
                 </div>
             </div>
             <div class="Rij">
                 <div class="Kol6">
                     <table class="NietVerplicht">
-                            <tr><th>Beroep:</th><td>Didier</td></tr>
-                            <tr><th>Oogkleur:</th><td>Didier</td></tr>
-                            <tr><th>Haarkleur:</th><td>Didier</td></tr>
+                            <tr><th>Beroep:</th><td style="width: 200px;" id="displayBeroep"></td></tr>
+                            <tr><th>Oogkleur:</th><td id="displayOogkleur"></td></tr>
+                            <tr><th>Haarkleur:</th><td id="displayHaarkleur"></td></tr>
                     </table>
                 </div>
                 <div class="Kol6">
                     <table class="NietVerplicht">
-                            <tr><th>Lengte:</th><td>Didier</td></tr>
-                            <tr><th>Gewicht:</th><td>Didier</td></tr>
-                            <tr><th>Seksvoorkeur:</th><td>Didier</td></tr>
+                            <tr><th>Lengte:</th><td id="displayLengte"></td></tr>
+                            <tr><th>Gewicht:</th><td id="displayGewicht"></td></tr>
+                            <tr><th>Geaardheid:</th><td id="displayGeaardheid"><td></td></tr>
                     </table>
                 </div>
             </div>
@@ -66,6 +54,62 @@
                 <button id="afspraakMaken" style="width: 600px; height: auto; margin: 80px auto;">Afspraak maken</button>
             </div>
         </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script async src="js/flexi_dating.min.js"></script>
+    <script type="text/javascript" src="js/fn_lib.js"></script>
+    <script>
+                    window.onload = function(){
+                        var tPartnerId = "56cae42a683485281caf5657";
+                        setPartnerId(tPartnerId);
+                        
+                        var sPartnerId = localStorage.partnerId;
+                        var sProfile = scrumlib.getProfileById(sPartnerId);
+                        
+                        var eFoto = document.getElementById("displayFoto");
+                        var fotoPath = "img/" + sProfile[0].foto;
+                        eFoto.src = fotoPath;
+                        
+                        var eNickname = document.getElementById("displayNickname");
+                        eNickname.innerHTML = sProfile[0].nickname;
+                        var eNickname = document.getElementById("displayLeeftijd");
+                        eNickname.innerHTML = berekenLeeftijd(sProfile[0].geboortedatum);
+                        var eNickname = document.getElementById("displayGeslacht");
+                        eNickname.innerHTML = sProfile[0].sexe;
+                        
+                        var eNickname = document.getElementById("displayBeroep");
+                        eNickname.innerHTML = sProfile[0].beroep;
+                        var eNickname = document.getElementById("displayOogkleur");
+                        eNickname.innerHTML = sProfile[0].oogkleur;
+                        var eNickname = document.getElementById("displayHaarkleur");
+                        eNickname.innerHTML = sProfile[0].haarkleur;
+                        
+                        var eNickname = document.getElementById("displayLengte");
+                        eNickname.innerHTML = sProfile[0].grootte;
+                        var eNickname = document.getElementById("displayGewicht");
+                        eNickname.innerHTML = sProfile[0].gewicht;
+                        var eNickname = document.getElementById("displayGeaardheid");
+                        eNickname.innerHTML = sProfile[0].seksvoorkeur;
+                       
+                        var knopTerugkeren = document.getElementById("terugkeren");
+                        knopTerugkeren.addEventListener('click',function(){
+                            location.href = "core.html";
+                        })
+                        
+                        var knopAfspraak = document.getElementById("afspraakMaken");
+                        knopAfspraak.addEventListener('click', function(){
+                            alert('U heeft een afspraakje gemaakt met: ' + sProfile[0].nickname);
+                        })
+                    }
+                    
+                    function berekenLeeftijd(sGeboortedatum){
+                        var aGeboortedatum = sGeboortedatum.split("-");
+                        var dGeboortedatum = new Date(aGeboortedatum[0],aGeboortedatum[1]-1,aGeboortedatum[2]);
+                        var leeftijdMs = Date.now() - dGeboortedatum.getTime();
+                        var leeftijdDate = new Date(leeftijdMs);
+                        var leeftijd = Math.abs(leeftijdDate.getUTCFullYear()-1970);
+                        return leeftijd;
+                    }
+    </script>
     </body>
 </html>
 
