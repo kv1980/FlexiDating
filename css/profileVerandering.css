@@ -3,9 +3,9 @@
     background-image: url("../img/profielen.jpg") ;
 }
 .Kol6 {
-    background-color: pink;
+    background-color: #ffe8fa;
     width: 400px;
-    height: 400px; 
+    height: 399px; 
 }
 .Kol6 table tr {
     display : block;
@@ -15,7 +15,7 @@
 }
 .Kol6 table tr th {
     display: inline-block;
-    padding-left: 10px;
+    padding-left: 15px;
     height : 25px;
     width: 130px;
 
@@ -25,5 +25,26 @@
     padding-left: 10px; 
     height : 25px;
     width: 200px;
+}
+
+.HeaderNickName{
+    height : 34px;
+}
+
+.knoppen {
+    background-color: #77c4d6;
+    text-align: center; 
+    height: 40px;
+    padding-top: 10px;
+}
+.knoppen input {
+    font-size: 14pt;
+}
+
+.Footer{
+    text-align: center;
+    
+}#footer_add img{
+    height : 119px;
 }
 

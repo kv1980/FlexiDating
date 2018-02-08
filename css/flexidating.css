@@ -55,6 +55,10 @@ th{
     float:left;
 }
 
+.Kol8 img{
+    height: 80px;
+}
+
 .Kol12{
     width: 100%;
     height: auto;
@@ -86,7 +90,7 @@ th{
     background-image: url(../img/BackgroundA.jpg);
     background-size: 100% 100%;
     width: 1520px;
-    height: 950px;
+    height: 600px;
 }
 
 .DisplayImage{
@@ -97,7 +101,7 @@ th{
 
 .FooterImage{
     display: block;
-    width: 100px;
+    width: 75px;
     height: auto;
 }
 
@@ -105,7 +109,7 @@ th{
     display: block;
     width: auto;
     height: 77px;
-    margin: 0px 10px;
+    margin: 0px 0px;
     padding: 0;
 }
 
@@ -137,13 +141,20 @@ th{
 /* Header */
 .Header{
     height: 80px;
+    background-color: #ffe8fa;
 }
 
 .HeaderNickName{
     width: 100px;
     margin-top: 10px;
+    margin-bottom: 5px;
     font-size: 24px;
     font-weight: bold;
+    color: #0086ff;
+}
+
+.HeaderLinks{
+    color: #77c4d6;
 }
 
 /* Body */
@@ -156,15 +167,15 @@ th{
     width: 20%; 
     height: 150px; 
     position: absolute; 
-    background: #FBFBF0; 
-    border: solid #000000 2px; 
+    background: #77c4d6; 
+    border: solid #0086ff 2px; 
     z-index: 9; 
-    font-family: arial; 
+    font-family: Helvetica; 
     visibility: hidden; 
 }
 
 .ProfielTitel{
-    background: #b3d9ff;
+    background: #77c4d6;
     padding : 10px 0px;
     text-align : center;
 }
@@ -253,31 +264,36 @@ table.NietVerplicht>th{
 .Footer{
     display: block;
     width: 800px;
+    height: 100px;
     margin-left: auto;
     margin-right: auto;
+}
+#footerList {
+    width: 800px;
+    height: 100px;
+    padding: 0px;
 }
 
 #footer_left{ 
     display: inline-block;
-    width: 100px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    width: 75px;
+    height: 75px;
+    margin-left: 25px;
     margin-top: 20px;
 }
 
 #footer_center{ 
     display: inline-block;
     vertical-align: top;
-    margin: 60px 100px;
+    margin-left: 145px;
+    padding-top: 45px;
 }
 
 #footer_right{ 
     display: inline-block;
-    width: 100px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    width: 75px;
+    height: 75px;
+    margin-left: 145px;
     margin-top: 20px;
 }
 
