@@ -1,0 +1,29 @@
+
+.Profiel  {
+    background-image: url("../img/profielen.jpg") ;
+}
+.Kol6 {
+    background-color: pink;
+    width: 400px;
+    height: 400px; 
+}
+.Kol6 table tr {
+    display : block;
+    height : 25px;
+    width : 400px;
+    margin-top: 25px; 
+}
+.Kol6 table tr th {
+    display: inline-block;
+    padding-left: 10px;
+    height : 25px;
+    width: 130px;
+
+}
+.Kol6 table tr td {
+    display: inline-block;
+    padding-left: 10px; 
+    height : 25px;
+    width: 200px;
+}
+
