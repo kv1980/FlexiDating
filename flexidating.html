@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="height: 950px; width: 1520px;">
+<head>
+    <meta charset="utf-8">
+	<link href="css/flexidating.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>FlexiDating - Home</title>
+</head>
+<body>
+    <section class="Header">
+        <div class="Rij">
+            <div class="Kol8">
+		<img src="img/Flexi.png" class="banner" alt="Flexi logo">
+	    </div>
+            <div class="Kol4">
+                <p class="HeaderNickName">Welkom</p>
+                <a class="HeaderLinks" id="registrerenLink" href="profile.html">Registreren</a>
+                <a class="HeaderLinks" id="inloggenLink" href="javascript:login('show');">Inloggen</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="background_home">
+			<div id="loginBox"> 
+				<form id="login" name="login" action="" method="post">
+					<center>Email:</center>
+					<center><input id="email" name="email" size="14" /></center>
+					<center>Wachtwoord:</center>
+					<center><input type="password" id="wachtwoord" name="wachtwoord" size="14" /></center>
+					<center><input type="button" id="loginKnop" name="loginKnop" value="login" /></center>
+				</form>
+				<br/>
+				<center><a href="javascript:login('hide');">Annuleren</a></center> 
+			</div> 
+        </div>
+    </section>
+    <footer class="Footer">
+		<ul id="footerList">
+			<li id="footer_left">
+				<img src="img/VDAB.png" class="FooterImage">
+			</li>
+			<li id="footer_center">
+				<p id="footer_tekst">VDAB projects -- Powered by Creative Design</p>
+			</li>
+			<li id="footer_right">
+				<img src="img/Happy.jpg" class="FooterImage">
+			</li>
+		</ul>
+	</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script async src="js/flexi_dating.min.js"></script>
+<script type="text/javascript" src="js/fn_lib.js"></script>
+<script>
+window.onload = function (){
+	var eLoginKnop = document.getElementById('loginKnop');
+		
+	eLoginKnop.addEventListener('click', function(e){
+		e.preventDefault();
+		
+		var eEmail = document.getElementById('email');
+		var sEmail = eEmail.value;
+		var eWachtwoord = document.getElementById('wachtwoord');
+		var sWachtwoord = eWachtwoord.value;
+		
+		if(sEmail != "" && sWachtwoord != ""){
+                    var userId = scrumlib.login(sEmail,sWachtwoord);
+                    var bVerstuurOK = true;
+		}
+		
+                else if(sEmail != ""){
+                    var bVerstuurOK = false;
+                    alert("Graag het veld 'Wachtwoord' invullen aub."); 
+		}
+                
+                else if(sWachtwoord != ""){
+                    var bVerstuurOK = false;
+                    alert("Graag het veld 'Email' invullen aub."); 
+		}
+                
+		else{
+                    var bVerstuurOK = false;
+                    alert("Graag de velden 'Email' en 'Wachtwoord' invullen aub."); 
+		}
+		
+		if(bVerstuurOK === true){
+                    if(userId == false){
+                        var userEmail = scrumlib.getProfilesByConditions({email:{"waarde":sEmail, "match": "="}});
+                        if (userEmail[0] == null){
+                            alert("Dit is geen gekend Emailadres, gelieve eerst te registreren!");
+                        }
+                        
+                        else{
+                            alert("Het wachtwoord is ongeldig, probeer opnieuw!");
+                        }
+                    }
+                    
+                    else{
+                        alert("Login: " + userId);
+                        setId(userId);
+                        window.location.href="core.html";
+                    }               
+		}
+		
+		else{
+			console.log("Er ging iets fout!");
+		}
+	})
+}
+
+function login(showhide){
+	if(showhide == "show"){
+		document.getElementById('loginBox').style.visibility="visible";
+	}
+
+	else if(showhide == "hide"){
+		document.getElementById('loginBox').style.visibility="hidden"; 
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="height: 950px; width: 1520px;">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="css/flexidating.css" rel="stylesheet">
+        <title>FlexiDating - View Profile</title>
+        <script type="text/javascript">
+                    window.onload = function(){
+                        var knopTerugkeren = document.getElementById("terugkeren");
+                        knopTerugkeren.addEventListener('click',function(){
+                            location.href = "core.html";
+                        })
+                        var knopAfspraak = document.getElementById("afspraakMaken");
+                        knopAfspraak.addEventListener('click', function(){
+                            alert('U heeft een afspraakje gemaakt met de lieftallige');
+                        })
+                    }
+        </script>
+    </head>
+    <body>
+        <section class="Header">
+            <div class="Rij">
+                <div class="Kol8">
+                    <img src="img/Flexi.png" class="banner" alt="Flexi logo">
+                </div>
+                <div class="Kol4">
+                    <button id="terugkeren" class="btn btn-lg btn-default">Terugkeren</button>
+                </div>
+            </div>
+        </section>
+        <section class="ZoekResultatenDisplay">
+            <div class="Rij">
+                <div class="Kol4">
+                    <img src="img/NoPicture.png" class="banner" alt="Flexi logo" style="width: 200px; height: auto; margin: 80px auto;">
+                </div>
+                <div class="Kol4">
+                    <table class="Verplicht">
+                            <tr><th>Nickname:</th><td>Didier</td></tr>
+                            <tr><th>Leeftijd:</th><td>16</td></tr>
+                            <tr><th>Geslacht:</th><td>m</td></tr>
+                        </table>
+                </div>
+                <div class="Kol4">
+                    <img src="img/NoPicture.png" class="banner" alt="Flexi logo" style="width: 200px; height: auto; margin: 80px auto;">
+                </div>
+            </div>
+            <div class="Rij">
+                <div class="Kol6">
+                    <table class="NietVerplicht">
+                            <tr><th>Beroep:</th><td>Didier</td></tr>
+                            <tr><th>Oogkleur:</th><td>Didier</td></tr>
+                            <tr><th>Haarkleur:</th><td>Didier</td></tr>
+                    </table>
+                </div>
+                <div class="Kol6">
+                    <table class="NietVerplicht">
+                            <tr><th>Lengte:</th><td>Didier</td></tr>
+                            <tr><th>Gewicht:</th><td>Didier</td></tr>
+                            <tr><th>Seksvoorkeur:</th><td>Didier</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="afspraakMaken">
+                <button id="afspraakMaken" style="width: 600px; height: auto; margin: 80px auto;">Afspraak maken</button>
+            </div>
+        </section>
+    </body>
+</html>
+
