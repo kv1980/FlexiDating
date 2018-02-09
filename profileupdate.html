@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/flexidating.css" rel="stylesheet">
     <link href="css/profileVerandering.css" rel="stylesheet">
-    <title>FlexiDating - Registratie</title>
+    <title>FlexiDating - Profiel</title>
 </head>
 <body>
     <section class="Header">
@@ -15,15 +15,15 @@
 		<img src="img/Flexi.png" class="banner" alt="Flexi logo">
             </div>
             <div class="Kol4">
-                <p class="HeaderNickName">Welkom</p>
-                <a class="HeaderLinks" href="flexidating.html">Annuleren</a>
+                <p class="HeaderNickName" id="weergaveNaam">Welkom</p>
+                <a class="HeaderLinks" href="core.html">Annuleren</a>
             </div>
         </div>
     </section>
     <section>
         <div class="ProfielTitel">
             <h2>UW PROFIEL</h2>
-            <p>Registratie bij FlexiDating: vul hieronder uw gegevens in en uw veroveringstocht kan beginnen!</p>
+            <p>FlexiDating: Wijzig hier uw gegevens.</p>
             <em>
                 * = Verplicht veld
             </em>
@@ -115,14 +115,52 @@
     <script type="text/javascript" src="js/fn_lib.js"></script>
     <script type="text/javascript">
             window.onload = function () {
+                var sUserId = localStorage.userId;
+                var sUserProfile = scrumlib.getProfileById(sUserId);
+            
+                var eWeergavenaam = document.getElementById("weergaveNaam");
+                eWeergavenaam.innerHTML = sUserProfile[0].nickname;
+                
                 vulSelectIn("haarkleur",jsonKleurenHaren);
                 vulSelectIn("oogkleur",jsonKleurenOgen);
+                
+                var eEmail = document.getElementById("email");
+                eEmail.value = sUserProfile[0].email;
+                var eWachtwoord = document.getElementById("wachtwoord");
+                eWachtwoord.value = sUserProfile[0].wachtwoord;
+                var eFamilienaam = document.getElementById("familienaam");
+                eFamilienaam.value = sUserProfile[0].familienaam;
+                var eVoornaam = document.getElementById("voornaam");
+                eVoornaam.value = sUserProfile[0].voornaam;
+                var eGeboortedatum = document.getElementById("geboortedatum");
+                eGeboortedatum.value = sUserProfile[0].geboortedatum;
+                var eFoto = document.getElementById("foto");
+                eFoto.value = sUserProfile[0].foto;
+                var eNickname = document.getElementById("nickname");
+                eNickname.value = sUserProfile[0].nickname;
+                
+                var eHaarkleur = document.getElementById("haarkleur");
+                eHaarkleur.value = sUserProfile[0].haarkleur;
+                var eOogkleur = document.getElementById("oogkleur");
+                eOogkleur.value = sUserProfile[0].oogkleur;
+                var eGewicht = document.getElementById("gewicht");
+                eGewicht.value = sUserProfile[0].gewicht;
+                var eGrootte = document.getElementById("grootte");
+                eGrootte.value = sUserProfile[0].grootte;
+                var eBeroep = document.getElementById("beroep");
+                eBeroep.value = sUserProfile[0].beroep;
+                
+                var geslachtWaarde = sUserProfile[0].sexe;
+                radioButton("sexe", geslachtWaarde);
+                var geaardheidWaarde = sUserProfile[0].seksvoorkeur;
+                radioButton("seksvoorkeur", geaardheidWaarde);
+                
                 scrumlib.init();
                 var aProfielen = scrumlib.getAllProfiles();
                 var eSubmit = document.getElementById("bewaren");
                 eSubmit.addEventListener("click",function(){
                 var foutmelding = maakFoutMelding(aProfielen);
-                if (foutmelding==""){
+                if (foutmelding===""){
                     var fotoNaam = checkFoto(document.getElementById("foto").value, radioButton("sexe"));
                     var oProfiel = {
                         "familienaam" : document.getElementById("familienaam").value,
@@ -140,10 +178,8 @@
                         "grootte" : document.getElementById("grootte").value,
                         "foto" : fotoNaam
                     }; 
-                    scrumlib.createProfile(oProfiel);
+                    scrumlib.updateProfile(sUserId,oProfiel);
                     scrumlib.save();
-                    var userId = scrumlib.login(document.getElementById("email").value,document.getElementById("wachtwoord").value);
-                    setId(userId);
                     location.href = "core.html";
                 }
                 else {
@@ -164,15 +200,14 @@
                 };
             };
 
-            function radioButton(el){
-                var eSexe = document.getElementsByName(el);
-                var sSexe = undefined;
-                for (var i =0;i<eSexe.length;i++) {
-                    if (eSexe[i].checked) {
-                        sSexe = eSexe[i].value;
+            function radioButton(el, waarde){
+                var eName = document.getElementsByName(el);
+                
+                for (var i = 0; i<eName.length; i++) {
+                    if (eName[i].value == waarde) {
+                        eName[i].checked = true;
                     };
                 };
-                return sSexe;
             }; 
 
             function maakFoutMelding(aProfielen) {
@@ -193,14 +228,14 @@
                         foutmelding = "Er bestaat al een account met dit emailadres."; 
                     }
                 }
-                var sSexe = radioButton("sexe");
-                if (sSexe == null){
-                    foutmelding = "U moet uw geslacht nog invullen.";
-                }
-                var sSeksvoorkeur = radioButton("seksvoorkeur")
-                if (sSeksvoorkeur == null){
-                    foutmelding = "U moet uw geaardheid nog invullen.";
-                }
+//                var sSexe = radioButton("sexe");
+//                if (sSexe == null){
+//                    foutmelding = "U moet uw geslacht nog invullen.";
+//                }
+//                var sSeksvoorkeur = radioButton("seksvoorkeur")
+//                if (sSeksvoorkeur == null){
+//                    foutmelding = "U moet uw geaardheid nog invullen.";
+//                }
                 return foutmelding;
             };
 

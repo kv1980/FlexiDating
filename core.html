@@ -13,8 +13,8 @@
                 <div class="col-md-8"><img src="img/Flexi.png" class="banner" alt="Flexi logo"></div>
                 <div class="col-md-4">
                     <p class="HeaderNickName" id ="weergaveNaam">Naam</p>
-                    <a class="HeaderLinks">Profiel Wijzigen</a>
-                    <a class="HeaderLinks" href="flexidating.html">Uitloggen</a>
+                    <a class="HeaderLinks" href="profileupdate.html">Profiel Wijzigen</a>
+                    <a class="HeaderLinks" href="javascript:LogOut();">Uitloggen</a>
                 </div>
             </div>
         </section>
@@ -90,7 +90,7 @@
         <footer class="Footer">
             <ul>
                 <li id="footer_add">
-                    <img src="img/BabyDeals.png" alt="figuurBabyDeals">
+                    <a id="footer_add" target="_blank" href="https://nl-nl.facebook.com/BabydealsNL/"><img src="img/BabyDeals.png" alt="figuurBabyDeals"></a>
                 </li>
             </ul>
         </footer>
@@ -100,6 +100,7 @@
 
         <script src ="js/kleurenHaren.json" type="text/javascript"></script>
         <script src ="js/kleurenOgen.json" type="text/javascript"></script>
+        <script type="text/javascript" src="js/fn_lib.js"></script>
         <script type="text/javascript">
             
             
@@ -121,7 +122,11 @@
                 toonProfielen(aSelectie2);  
             });
         };  
-         
+        
+        function LogOut(){
+            removeId();
+            window.location.href="flexidating.html";
+        };
     
         function vulSelectIn(selectID,jsonID){
             var aKleuren = JSON.parse(jsonID);
@@ -226,7 +231,7 @@
                   eKnop = document.createElement("button");
                   eKnop.innerHTML = 'toon';
                   eKnop.addEventListener("click", function(){
-                      window.location.href = "http://localhost:8383/FlexiDating/display.html";
+                      window.open("http://localhost:8383/FlexiDating/display.html","_blank");
                   })
                   eDivIndividu.appendChild(eKnop);
                   eDivResultaten.appendChild(eDivIndividu);
