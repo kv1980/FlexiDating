@@ -1,24 +1,50 @@
 @charset "utf-8";
 /* CSS Document voor display pagina FlexiDating */
+.Kol4{
+    height : 300px;
+}
 
+.Kol6{
+    height : 200px;
+    width : 500px;
+    margin-left : 250px;
+}
 .Verplicht{
-    //border: solid 1px red;
-    margin-top: 100px;
+    margin-top: 60px;
 /*    border-style: solid;
     border-width: 1px ;
     border-color:#ffe8fa;*/
     width: 100%;
 }
 
+#displayFoto {
+    border: solid 5px red;
+    height : 200px;
+    width : 200px;
+}
+#displaySterrenbeeld {
+    border: solid 5px red;
+    height : 200px;
+    width : 200px; 
+}
+
 .Verplicht tbody{
-    border: solid 2px red;
+    border: solid 5px red;
+    background : linear-gradient(white,#77c4d6);
     display: block;
     padding: 20px;
-   
+    width : 500px;
+    height : 200px;
+}
+
+.Verplicht tr th{
+    width: 180px;   
+}
+.Verplicht tr td{
+    width: 270px;
 }
 
 .NietVerplicht{
-    //border: solid 1px red;
     margin-top: 50px;
     width: 500px;
     
@@ -29,28 +55,25 @@ div>.Verplicht{
 }
 
 div>.NietVerplicht th{
-    font-size: 20px;
-    width: 30%;
-    
+    font-size: 23px;
+    width: 30%;   
 }
 
 div>.NietVerplicht td{
-    font-size: 20px;
-    
+    font-size: 23px; 
 }
 
-div.kol6{
-    height: 200px;
+#NietVerplichtLinks{
 }
 
 #afspraakMaken{
     width: 800px;
-}
+    font-size : 14pt;
+    background-color : #77c4d6;
+    height : 50px;
 
 .ZoekResultatenDisplay{
     height: 800px;
     background:#eee;
 }
-
-
 
