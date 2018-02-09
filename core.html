@@ -110,24 +110,8 @@
             document.getElementById("zoekKnopje").addEventListener("click",function(){
                 var oSelectie = maakOSelectie();
                 var aSelectie = scrumlib.getProfilesByConditions(oSelectie);
-                toonProfielen(aSelectie);  
-                
-                
-                
-              
-                
-                var vandaag = Date.now();
-                var geboortedatum=new Date(apr 18 1973);
-                secDatum = 
-                console.log(datum);
-                jaarVandaag = vandaag.getFullYear();
-                
-                
-                console.log(jaarVandaag);
-//                var minLeeftijd = 40 * 60 * 60 * 24 * 365;
-//                var berekende = datum - minLeeftijd;
-//                var berekendeDatum = berekende.getUTCdate();
-                console.log(berekendeDatum);
+                var aSelectie2 = selectieLeeftijd(aSelectie);
+                toonProfielen(aSelectie2);  
             });
         };  
          
@@ -158,7 +142,7 @@
                 var oSelectie = {};
                 console.log(oSelectie);
                 if(document.getElementById("minleeftijd").value != ""){
-                    oSelectie.leeftijd={"waarde":document.getElementById("minleeftijd").value, "match": ">"};
+                    //oSelectie.geboortedatum={"waarde":document.getElementById("minleeftijd").value, "match": ">"};
                 }
                 if(document.getElementById("maxleeftijd").value != ""){
                     //oSelectie.leeftijd={"waarde":document.getElementById("maxleeftijd").value, "match": "<"};
@@ -189,6 +173,21 @@
                 }
                 console.log(oSelectie);
                 return oSelectie;
+            }
+            
+            function selectieLeeftijd(aSelectie){
+                var eMinLeeftijd = document.getElementById("minleeftijd").value;
+                var eMaxLeeftijd = document.getElementById("maxleeftijd").value;
+                var aSelectie2 = []
+                for (var i = 0; i < aSelectie.length; i++){
+                    if(eMinLeeftijd == "" && eMaxLeeftijd == ""){
+                        aSelectie2.push(aSelectie[i])
+                    }
+                    if(berekenLeeftijd(aSelectie[i].geboortedatum) >= eMinLeeftijd && berekenLeeftijd(aSelectie[i].geboortedatum) <= eMaxLeeftijd){
+                       aSelectie2.push(aSelectie[i]) 
+                    }
+                }
+                return aSelectie2;
             }
             
             function toonProfielen(aSelectie){
