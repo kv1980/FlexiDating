@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document voor display pagina FlexiDating */
+
+.Verplicht{
+    //border: solid 1px red;
+    margin-top: 100px;
+/*    border-style: solid;
+    border-width: 1px ;
+    border-color:#ffe8fa;*/
+    width: 100%;
+}
+
+.Verplicht tbody{
+    border: solid 2px red;
+    display: block;
+    padding: 20px;
+   
+}
+
+.NietVerplicht{
+    //border: solid 1px red;
+    margin-top: 50px;
+    width: 500px;
+    
+}
+
+div>.Verplicht{
+    font-size: 30px;
+}
+
+div>.NietVerplicht th{
+    font-size: 20px;
+    width: 30%;
+    
+}
+
+div>.NietVerplicht td{
+    font-size: 20px;
+    
+}
+
+div.kol6{
+    height: 200px;
+}
+
+#afspraakMaken{
+    width: 800px;
+}
+
+.ZoekResultatenDisplay{
+    height: 800px;
+    background:#eee;
+}
+
+
+
