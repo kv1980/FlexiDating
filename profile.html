@@ -122,6 +122,7 @@
                 eSubmit.addEventListener("click",function(){
                 var foutmelding = maakFoutMelding(aProfielen);
                 if (foutmelding==""){
+                    var fotoNaam = checkFoto(document.getElementById("foto").value, radioButton("sexe"));
                     var oProfiel = {
                         "familienaam" : document.getElementById("familienaam").value,
                         "voornaam" : document.getElementById("voornaam").value,
@@ -136,7 +137,7 @@
                         "oogkleur" : document.getElementById("oogkleur").value,
                         "gewicht" : document.getElementById("gewicht").value,
                         "grootte" : document.getElementById("grootte").value,
-                        "foto" : document.getElementById("foto").value
+                        "foto" : fotoNaam
                     }; 
                     scrumlib.createProfile(oProfiel);
                     scrumlib.save();
@@ -207,6 +208,22 @@
                 var leeftijdDate = new Date(leeftijdMs);
                 var leeftijd = Math.abs(leeftijdDate.getUTCFullYear()-1970);
                 return leeftijd;
+            }
+            
+            function checkFoto(naamFoto, geslacht){
+                if (naamFoto != ""){
+                    return naamFoto;
+                }
+                
+                else{
+                    if (geslacht == "m"){
+                        return "male.png"
+                    }
+                    
+                    else{
+                        return "female.png"
+                    }
+                }
             }
         </script>
     </body>

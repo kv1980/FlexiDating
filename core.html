@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link href="css/flexidating.css" rel="stylesheet">
+	<link href="css/flexidating.css" rel="stylesheet">
+        <link href="css/coreVerandering.css" rel="stylesheet">
         <title>FlexiDating</title>
     </head>
     <body>
@@ -12,7 +13,7 @@
             <div class="row">
                 <div class="col-md-8"><img src="img/Flexi.png" class="banner" alt="Flexi logo"></div>
                 <div class="col-md-4">
-                    <p class="HeaderNickName">Naam</p>
+                    <p class="HeaderNickName" id ="weergaveNaam">Naam</p>
                     <a class="HeaderLinks">Profiel Wijzigen</a>
                     <a class="HeaderLinks" href="flexidating.html">Uitloggen</a>
                 </div>
@@ -103,10 +104,17 @@
         <script type="text/javascript">
             
             
-        window.onload = function () {
+        window.onload = function () {           
             vulSelectIn("haarkleur",jsonKleurenHaren);
             vulSelectIn("oogkleur",jsonKleurenOgen);
             scrumlib.init();
+            
+            var sUserId = localStorage.userId;
+            var sUserProfile = scrumlib.getProfileById(sUserId);
+            
+            var eWeergavenaam = document.getElementById("weergaveNaam");
+            eWeergavenaam.innerHTML = sUserProfile[0].nickname;
+            
             document.getElementById("zoekKnopje").addEventListener("click",function(){
                 var oSelectie = maakOSelectie();
                 var aSelectie = scrumlib.getProfilesByConditions(oSelectie);
@@ -199,6 +207,12 @@
                   eDivIndividu = document.createElement('div');
                   eDivIndividu.setAttribute("id", aSelectie[i]._id);
                   eDivIndividu.setAttribute("class", "IndivRes");
+                  
+                  eImg = document.createElement('img');
+                  var fotoPath = "img/" + aSelectie[i].foto;
+                  eImg.src = fotoPath;
+                  eDivIndividu.appendChild(eImg);
+                  
                   eLijst = document.createElement('ul');
                   eLijstItem1 = document.createElement('li');
                   eLijstItem1.innerHTML = aSelectie[i].geboortedatum;
