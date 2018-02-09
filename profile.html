@@ -85,12 +85,12 @@
                             <td><input type="text" id="beroep" name="beroep" placeholder="uw beroep"></td>
                         </tr>
                         <tr>
-                            <th><label for ="sexe">Geslacht:</label></th>
+                            <th><label for ="sexe">Geslacht:*</label></th>
                             <td><input type = "radio" id="sexem" name="sexe" value="m">Man
                                 <input type = "radio" id="sexev" name="sexe" value="v">Vrouw</td>
                         </tr>
                         <tr>
-                            <th><label for ="seksvoorkeur">Geaardheid:</label></th>
+                            <th><label for ="seksvoorkeur">Geaardheid:*</label></th>
                             <td><input type = "radio" name="seksvoorkeur" value="homo">Homo
                                 <input type = "radio" name="seksvoorkeur" value="hetero">Hetero
                                 <input type = "radio" name="seksvoorkeur" value="bi">Bi</td>
@@ -188,6 +188,14 @@
                     if (sEmail == aProfielen[i].email){
                         foutmelding = "Er bestaat al een account met dit emailadres."; 
                     }
+                }
+                var sSexe = radioButton("sexe");
+                if (sSexe == null){
+                    foutmelding = "U moet uw geslacht nog invullen.";
+                }
+                var sSeksvoorkeur = radioButton("seksvoorkeur")
+                if (sSeksvoorkeur == null){
+                    foutmelding = "U moet uw geaardheid nog invullen.";
                 }
                 return foutmelding;
             };
